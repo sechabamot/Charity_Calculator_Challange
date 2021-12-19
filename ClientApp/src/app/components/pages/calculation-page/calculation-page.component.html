@@ -1,0 +1,36 @@
+<div class="login mt-5">
+    <div class="container">
+        <div class="d-flex mt-2 mb-2 justify-content-center align-items-center">        
+            <div class="card" style="min-width: 400px; max-width: 300px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 p-2">
+                            <h6>Your Donation</h6>
+                            <div class="input-group mt-2 mb-3">
+                                <span class="input-group-text">R</span>
+                                <input type="number"  class="form-control form-control form-control-sm" [(ngModel)]="donation.Value" (ngModelChange)="donationChanged(donation.Value)">
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-2">
+                            <h6>Deductible Amount</h6>
+                            <div class="input-group mt-2 mb-3">
+                                <span class="input-group-text">R</span>
+                                <input type="text" [(ngModel)]="deductable"  class="form-control form-control-sm" aria-label="Amount (to the nearest dollar)" disabled readonly>
+                            </div>
+                        </div>    
+                        <div class="col-md-12">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Event</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                  <option selected value="1">Spots</option>
+                                  <option value="2">Political</option>
+                                  <option value="3">Other</option>
+                                </select>
+                              </div>
+                        </div>    
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

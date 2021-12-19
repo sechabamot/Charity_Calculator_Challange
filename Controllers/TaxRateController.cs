@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Charity_Calculator_Challange.Controllers
 {
-    [ApiController]
     public class TaxRateController : ControllerBase
     {
         public TaxRateController()
@@ -15,13 +15,16 @@ namespace Charity_Calculator_Challange.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             return Ok();      
         }
 
+
         [HttpPut]
-        public IActionResult Put()
+        [Authorize(Roles = "Admin")]
+        public IActionResult Update()
         {
             return Ok();
         }
